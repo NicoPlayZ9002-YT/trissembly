@@ -8,7 +8,7 @@ Trissembly is an open-source, register-based programming language based on assem
 
 **Option 1 : Run a .trs file**
 ```
-lua main.lua program.trs
+lua interpreter.lua program.trs
 ```
 Where `program.trs` contains instructions like:
 ```
