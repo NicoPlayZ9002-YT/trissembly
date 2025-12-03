@@ -1,4 +1,4 @@
-# Trissembly
+# Trissembly v1.1
 
 Trissembly is an open-source, register-based programming language based on assembly languages interpreted in Lua.
 
@@ -6,7 +6,7 @@ Trissembly is an open-source, register-based programming language based on assem
 
 ## Running Trissembly (Lua 5.3+)
 
-**Option 1 — Run a .trs file**
+**Option 1 : Run a .trs file**
 ```
 lua main.lua program.trs
 ```
@@ -16,7 +16,7 @@ LIT 0 "Hello, world!"
 PRN 0
 ```
 
-**Option 2 — Embed program directly in `main.lua`**  
+**Option 2 : Embed program directly in `main.lua`**  
 Useful for iPad/mobile environments lacking file access.
 ```
 program = {
@@ -43,6 +43,13 @@ PRN 0
 
 # Opcode List
 
+### **Pointer Movement**
+```
+JMP L    ; Jump to line L
+JEZ A L    ; Jump to line L if A is 0
+JNZ A L   ; Jump to line L if A is NOT 0
+```
+
 ### **Data Movement**
 ```
 LIT A value     ; Load literal (string/number) into register A
@@ -66,6 +73,8 @@ RNM A B         ; RNG with modulus B (random % B)
 ```
 ASC A "c"       ; A = ASCII code of character c
 CHR A B         ; A = character represented by ASCII value in B
+STR A           ; Converts A to a string, regardless of what it was before.
+CCT A B         ; Concatenates A and B together, and changes A to be the result.
 ```
 
 ### **I/O**
@@ -91,11 +100,48 @@ ENW
 # Notes
 - Trissembly uses 256 integer-indexed registers: `0` through `255`.
 - FOR loops error if the step value is **0** (to prevent infinite loops).
-- Strings must be surrounded with `"double quotes"`.
+- Strings must be surrounded with `"double quotes"`, and if using the lua program = {} feature, you must have them be `\"`. `'Unless your lines are in single quotes'`.
 - Semicolons or hashtags are comments.
 
 ---
 
-Trissembly will continue to update over time — redownload the interpreter to stay current.
+Trissembly will continue to update over time, so you'll need to redownload the interpreter to keep the most recent version.
 
-# To-do list
+# To-do List (Potential improvements)
+
+### **Language Features**
+- [ ] Add comparisons (`EQL`, `NEQ`, `LTH`, `GTH`, etc.)
+- [ ] Add boolean logic ops (`AND`, `OR`, `NOT`)
+- [ ] Add memory arrays (`STO`, `LOD`)
+- [ ] Add function calls (`CAL`, `RET`)
+- [ ] Add labels + `JMP label` support
+- [ ] Add `HLT` (HALT) instruction
+
+### **Interpreter Improvements**
+- [ ] Add proper error messages (with context, like `line X: invalid value`)
+- [ ] Add debug mode (`--debug`) that prints registers per step
+- [ ] Add warning for infinite WHL loops
+- [ ] Add file I/O ops (`RDF`, `WRF`)
+- [ ] Add command-line arguments passthrough
+- [ ] Add unit tests for each opcode using Lua or Python
+
+### **Developer Tools**
+- [ ] Create a VSCode syntax highlighting extension
+- [ ] Add launch configs so you can F5-run `.trs` files
+- [ ] Add Trissembly examples folder (loops, math, ASCII, etc.)
+- [ ] Add automated GitHub Actions test runner
+- [ ] Add formatter (pretty-print `.trs` code)
+- [ ] Add linter (warn on unused registers, dead code, etc.)
+
+### **Documentation**
+- [ ] Add a full reference manual for every opcode
+- [ ] Add beginner tutorial: "Trissembly in 10 minutes"
+- [ ] Add specification for interpreter behavior
+- [ ] Add changelog
+
+### **Future / Ambitious**
+- [ ] Make a Python version of the interpreter
+- [ ] Make a C version (super fast)
+- [ ] Make an online playground where `.trs` code runs in browser
+- [ ] Write a Trissembly → Lua transpiler
+- [ ] Write a bytecode compiler
