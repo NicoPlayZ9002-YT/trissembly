@@ -2,6 +2,8 @@
 
 Trissembly is an open-source, register-based programming language based on assembly languages interpreted in Lua.
 
+(NOTE: FILE SUPPORT MAY NOT WORK CURRENTLY)
+
 ## Running Trissembly (Lua 5.3+)
 
 **Option 1 — Run a .trs file**
