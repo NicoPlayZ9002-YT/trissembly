@@ -24,7 +24,10 @@ program = {
 
   'SUB N ONE',
 
-  'JEZ N 28',
+  'MOV C N',
+  'ADD C ONE',
+
+  'JEZ N 30',
 
   'LIT A ""',
   'CCT A C',
