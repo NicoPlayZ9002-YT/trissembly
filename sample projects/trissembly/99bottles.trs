@@ -22,7 +22,10 @@ PRN T
 
 SUB N ONE
 
-JEZ N 37      ; In the program table, this jumps to line 28.
+JEZ N 40                                      ; In the program table, this jumps to line 30.
+
+MOV C N
+ADD C ONE
 
 LIT A ""
 CCT A C
@@ -34,7 +37,7 @@ JMP 3
 
 ENW
 
-LIT A "1 bottle of beer on the wall! \n "      ; This is line 28 in the program table, or operation 28.
+LIT A "1 bottle of beer on the wall! \n "      ; This is line 30 in the program table, or operation 30.
 PRN A
 
 LIT A "1 bottle of beer on the wall,"
