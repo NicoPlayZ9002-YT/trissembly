@@ -141,7 +141,7 @@ Trissembly will continue to update over time, so you'll need to redownload the i
 
 ### **Future / Ambitious**
 - [ ] Make a Python version of the interpreter
-- [ ] Make a C version (super fast)
+- [ ] Make a C version (super fast) (IN PROGRESS)
 - [ ] Make an online playground where `.trs` code runs in browser
 - [ ] Write a Trissembly → Lua transpiler
 - [ ] Write a bytecode compiler
